@@ -1,3 +1,4 @@
+// Hoan thanh buoc 2: Cai dat EF Core
 namespace BT_Code_First
 {
     public class Program
