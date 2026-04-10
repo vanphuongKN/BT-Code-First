@@ -1,4 +1,7 @@
-// Hoan thanh buoc 2: Cai dat EF Core
+
+using BT_Code_First.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace BT_Code_First
 {
     public class Program
@@ -9,7 +12,8 @@ namespace BT_Code_First
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
